@@ -444,14 +444,14 @@ strong {
 }
 
 .btn-accent {
-    background: linear-gradient(135deg, var(--accent-gold) 0%, #d4af37 100%);
+    background: linear-gradient(135deg, var(--accent-gold) 0%, #0762f5 100%);
     color: #ffffff;
     border: none;
     box-shadow: 0 4px 15px rgba(178, 138, 26, 0.3);
 }
 
 .btn-accent:hover {
-    background: linear-gradient(135deg, #d4af37 0%, var(--accent-gold) 100%);
+    background: linear-gradient(135deg, #0762f5 0%, var(--accent-gold) 100%);
     color: #ffffff;
     box-shadow: 0 6px 22px rgba(178, 138, 26, 0.45);
     transform: translateY(-3px);
