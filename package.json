@@ -1,0 +1,23 @@
+{
+  "name": "elpitha-mun",
+  "version": "1.0.0",
+  "description": "Ελπίδα Model United Nations - Official Website",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adam382010-svg/Elpitha.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adam382010-svg/Elpitha/issues"
+  },
+  "homepage": "https://github.com/adam382010-svg/Elpitha#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
