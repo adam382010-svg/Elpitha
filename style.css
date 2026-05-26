@@ -678,7 +678,7 @@ section {
 }
 
 .value-item h3 {
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Etna', 'Outfit', sans-serif;
     font-size: 1.15rem;
     font-weight: 700;
     color: var(--accent-blue-dark);
