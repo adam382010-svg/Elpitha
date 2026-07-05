@@ -1458,3 +1458,57 @@ section {
     50% { transform: scale(1.15); filter: drop-shadow(0 0 8px var(--accent-gold)); }
 }
 
+/* ==========================================================================
+   DEPARTMENT GROUPING LAYOUT
+   ========================================================================== */
+.departments-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4.5rem;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+}
+
+.department-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.department-title {
+    font-family: 'Etna', 'Outfit', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent-blue-dark);
+    margin-bottom: 2.5rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 0.75rem;
+}
+
+.department-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background-color: var(--accent-gold);
+}
+
+.department-heads-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center;
+    width: 100%;
+}
+
+.department-heads-grid .board-card {
+    flex: 0 1 290px;
+    width: 100%;
+}
+
