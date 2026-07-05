@@ -143,6 +143,7 @@ strong {
 
 /* Subtle Mouse-Tracking Glow Mesh */
 .mouse-glow {
+    display: none; /* Hide by default on mobile/tablet touch devices */
     position: fixed;
     top: 0;
     left: 0;
@@ -156,6 +157,12 @@ strong {
     opacity: 0;
     transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: transform, opacity;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .mouse-glow {
+        display: block; /* Only show on PC/devices with hover capability and a precise cursor pointer */
+    }
 }
 
 /* ==========================================================================
@@ -461,13 +468,13 @@ strong {
     background: linear-gradient(135deg, var(--accent-gold) 0%, #0762f5 100%);
     color: #ffffff;
     border: none;
-    box-shadow: 0 4px 15px rgba(178, 138, 26, 0.3);
+    box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3); /* Deep royal/dark blue shadow */
 }
 
 .btn-accent:hover {
     background: linear-gradient(135deg, #0762f5 0%, var(--accent-gold) 100%);
     color: #ffffff;
-    box-shadow: 0 6px 22px rgba(178, 138, 26, 0.45);
+    box-shadow: 0 6px 22px rgba(30, 58, 138, 0.45); /* Deep royal/dark blue shadow */
     transform: translateY(-3px);
 }
 
