@@ -1519,3 +1519,28 @@ section {
     width: 100%;
 }
 
+/* Department Section: visual grouping wrapper for Committee Affairs + its sub-depts */
+.department-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem; /* tighter gap between CA, Volunteers, Security */
+    width: 100%;
+    border: 1px solid var(--bg-tertiary);
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    background: rgba(255,255,255,0.02);
+}
+
+/* Sub-departments inside a section get a subtle top divider */
+.department-sub {
+    border-top: 1px solid var(--bg-tertiary);
+    padding-top: 2rem;
+}
+
+.department-sub .department-title {
+    font-size: 1.1rem;
+    letter-spacing: 0.07em;
+    color: var(--text-secondary);
+}
+
+
