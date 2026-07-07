@@ -250,4 +250,44 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 4000);
         });
     }
+
+    // ==========================================================================
+    // 9. EASTER EGG — HERO LOGO 15-CLICK KWEBLEKOP LAUGH
+    // ==========================================================================
+    const heroLogo = document.querySelector('#hero .hero-logo');
+    if (heroLogo) {
+        const CLICKS_NEEDED = 15;
+        const RESET_DELAY_MS = 3000; // reset counter if no click for 3s
+        let logoClickCount = 0;
+        let resetTimer = null;
+        const easterAudio = new Audio('assets/kweblekop-laugh.mp3');
+
+        heroLogo.style.cursor = 'pointer';
+
+        heroLogo.addEventListener('click', () => {
+            logoClickCount++;
+
+            // Reset the idle timer on every click
+            clearTimeout(resetTimer);
+            resetTimer = setTimeout(() => {
+                logoClickCount = 0;
+            }, RESET_DELAY_MS);
+
+            if (logoClickCount >= CLICKS_NEEDED) {
+                logoClickCount = 0;
+                clearTimeout(resetTimer);
+                // Rewind and play from start in case it's already playing
+                easterAudio.currentTime = 0;
+                easterAudio.play().catch(() => {
+                    // Autoplay may be blocked silently — no action needed
+                });
+                // Fun little shake animation on the logo
+                heroLogo.classList.add('easter-egg-shake');
+                heroLogo.addEventListener('animationend', () => {
+                    heroLogo.classList.remove('easter-egg-shake');
+                }, { once: true });
+            }
+        });
+    }
 });
+
