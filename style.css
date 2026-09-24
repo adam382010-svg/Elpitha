@@ -1309,6 +1309,12 @@ section {
     .contact-box {
         padding: 2.5rem 1.5rem;
     }
+
+    .applications-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 1.5rem auto 0 auto;
+    }
 }
 
 /* 4. Small Mobile Phones */
@@ -1321,6 +1327,10 @@ section {
     
     .title-greek {
         font-size: 3.2rem;
+    }
+
+    .app-portal-title {
+        font-size: 2.1rem !important;
     }
     
     .hero-center-logo {
@@ -1546,12 +1556,24 @@ section {
 /* ==========================================================================
    APPLICATIONS PORTAL & MODAL SYSTEM
    ========================================================================== */
+.app-portal-title {
+    font-size: clamp(2.2rem, 6.5vw, 3.8rem);
+    line-height: 1.15;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    text-align: center;
+    max-width: 100%;
+}
+
 .applications-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2.5rem;
     margin-top: 2rem;
     align-items: stretch;
+    justify-content: center;
+    justify-items: center;
+    width: 100%;
 }
 
 .app-card {
@@ -1564,6 +1586,9 @@ section {
     position: relative;
     box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
     transition: var(--transition-smooth);
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
 }
 
 .app-card:hover {
@@ -1801,7 +1826,7 @@ section {
 }
 
 .team-choice-title {
-    font-family: 'Cinzel', Georgia, serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.15rem;
     font-weight: 700;
     color: var(--accent-blue-dark);
