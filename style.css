@@ -1543,4 +1543,311 @@ section {
     color: var(--text-secondary);
 }
 
+/* ==========================================================================
+   APPLICATIONS PORTAL & MODAL SYSTEM
+   ========================================================================== */
+.applications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    margin-top: 2rem;
+    align-items: stretch;
+}
+
+.app-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+    transition: var(--transition-smooth);
+}
+
+.app-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-blue);
+    box-shadow: 0 20px 40px rgba(75, 167, 237, 0.18);
+}
+
+.featured-app-card {
+    border: 1.5px solid var(--accent-blue-dark);
+    box-shadow: 0 12px 35px rgba(30, 58, 138, 0.1);
+}
+
+.app-card-badge {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #10b981;
+    background: rgba(16, 185, 129, 0.08);
+    padding: 0.35rem 0.85rem;
+    border-radius: 20px;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    margin-bottom: 1.5rem;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+    background-color: #10b981;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #10b981;
+}
+
+.app-card-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.app-card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.65rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    color: var(--accent-blue-dark);
+}
+
+.app-card-subtitle {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent-gold);
+    margin-bottom: 1.25rem;
+}
+
+.app-card-desc {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+}
+
+.app-card-features {
+    list-style: none;
+    margin-top: auto;
+    margin-bottom: 2rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--bg-tertiary);
+}
+
+.app-card-features li {
+    font-size: 0.88rem;
+    color: var(--text-primary);
+    margin-bottom: 0.6rem;
+    font-weight: 500;
+}
+
+/* Modal Overlay & Dialog */
+.app-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.app-modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.app-modal-card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 580px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    position: relative;
+    box-shadow: 0 25px 60px rgba(15, 23, 42, 0.25);
+    border: 1px solid var(--border-color);
+    transform: translateY(20px);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.app-modal-overlay.active .app-modal-card {
+    transform: translateY(0);
+}
+
+.app-modal-close {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.5rem;
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    line-height: 1;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.app-modal-close:hover {
+    color: var(--accent-blue-dark);
+}
+
+.app-modal-header {
+    margin-bottom: 1.75rem;
+    text-align: center;
+}
+
+.app-modal-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent-gold);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.app-modal-title {
+    font-size: 1.75rem;
+    color: var(--accent-blue-dark);
+    margin-bottom: 0.5rem;
+}
+
+.app-modal-sub {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font-size: 0.95rem;
+    font-family: 'Outfit', sans-serif;
+    border: 1px solid var(--bg-tertiary);
+    border-radius: 8px;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    transition: var(--transition-fast);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(75, 167, 237, 0.2);
+}
+
+/* Team Department Choice Buttons */
+.team-choices-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.team-choice-btn {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--bg-tertiary);
+    border-radius: 12px;
+    cursor: pointer;
+    text-align: left;
+    transition: var(--transition-smooth);
+    width: 100%;
+}
+
+.team-choice-btn:hover {
+    background: #ffffff;
+    border-color: var(--accent-blue);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(75, 167, 237, 0.15);
+}
+
+.team-choice-icon {
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.team-choice-title {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--accent-blue-dark);
+    display: block;
+}
+
+.team-choice-sub {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    display: block;
+}
+
+/* Coming Soon Application Badge & Button */
+.app-card-badge.coming-soon-badge {
+    color: var(--accent-gold);
+    background: rgba(75, 167, 237, 0.08);
+    border-color: rgba(75, 167, 237, 0.3);
+}
+
+.status-dot.coming-soon-dot {
+    background-color: var(--accent-gold);
+    box-shadow: 0 0 8px var(--accent-gold);
+}
+
+.disabled-app-btn {
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-muted) !important;
+    border: 1px solid var(--bg-tertiary) !important;
+    opacity: 0.75;
+    cursor: not-allowed !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+.disabled-app-btn:hover {
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-muted) !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.opacity-card {
+    opacity: 0.9;
+}
+
+
+
+
 

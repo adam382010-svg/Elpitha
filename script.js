@@ -218,38 +218,9 @@ document.addEventListener('DOMContentLoaded', () => {
     animateGlow();
 
     // ==========================================================================
-    // 6. APPLY NOW BUTTON & CUSTOM TOAST NOTIFICATION
+    // 6. APPLICATIONS ROUTING
     // ==========================================================================
-    const applyBtn = document.getElementById('applyBtn');
-    
-    // Create Toast Element dynamically if it doesn't exist
-    let toast = document.querySelector('.toast-notification');
-    if (!toast) {
-        toast = document.createElement('div');
-        toast.className = 'toast-notification';
-        toast.innerHTML = `
-            <span class="toast-icon">⏳</span>
-            <div class="toast-content">
-                <span class="toast-title">Applications Status</span>
-                <span class="toast-message">Coming Soon! Stay tuned for delegate registrations.</span>
-            </div>
-        `;
-        document.body.appendChild(toast);
-    }
-
-    if (applyBtn) {
-        applyBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            
-            // Trigger Toast Animation
-            toast.classList.add('active');
-            
-            // Auto hide after 4 seconds
-            setTimeout(() => {
-                toast.classList.remove('active');
-            }, 4000);
-        });
-    }
+    // applyBtn link to apply.html handles direct navigation
 
     // ==========================================================================
     // 9. EASTER EGG — HERO LOGO 15-CLICK KWEBLEKOP LAUGH
