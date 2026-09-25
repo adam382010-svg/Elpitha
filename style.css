@@ -782,9 +782,16 @@ section {
     grid-template-columns: repeat(3, minmax(250px, 320px));
 }
 
-/* Managers Grid (Row of 2) */
+/* Managers Grid (Centered flex for 1 or more directors) */
 .grid-managers {
-    grid-template-columns: repeat(2, minmax(250px, 320px));
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.grid-managers .board-card {
+    flex: 0 1 320px;
+    width: 100%;
 }
 
 /* Departments Grid (Flexible responsive 3/4 columns) */
@@ -1301,7 +1308,8 @@ section {
     }
     
     .grid-managers {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        align-items: center;
         max-width: 320px;
         margin: 0 auto;
     }
